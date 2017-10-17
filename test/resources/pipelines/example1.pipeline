@@ -1,0 +1,23 @@
+package pipelines
+
+@Library('jenkinslib-example')
+
+import com.example.SomeClass
+
+def execute() {
+    node() {
+        stage("First") {
+            echo "Something"
+            sayHello "Traveller"
+        }
+        stage("Middle") {
+            SomeClass sc = new SomeClass()
+            echo sc.doSomething()
+        }
+        stage("Last") {
+            echo "We're done"
+        }
+    }
+}
+
+return this
