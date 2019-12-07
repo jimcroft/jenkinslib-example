@@ -5,12 +5,13 @@ apply plugin: 'groovy'
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.jenkins-ci.org/releases/' }
 }
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.6'
     testCompile 'junit:junit:4.12'
-    testCompile files('C:\\Users\\jim\\Code\\JenkinsPipelineUnit\\build\\libs\\jenkins-pipeline-unit-1.2-SNAPSHOT.jar')
+    testCompile group:'com.lesfurets', name:'jenkins-pipeline-unit', version:'1.2'
     testCompile 'commons-io:commons-io:2.5'
     testCompile 'com.cloudbees:groovy-cps:1.12'
     testCompile 'org.slf4j:slf4j-simple:1.7.25'
